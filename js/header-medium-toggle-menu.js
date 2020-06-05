@@ -1,20 +1,15 @@
+$(function(){
 
-let toggleButton=document.querySelectorAll('.header__nav-button')[0];
-let toggleMenu=document.querySelectorAll('.header__nav')[0];
+   $('.header__nav-button').on('click', function (e) {
+      $('.header__nav').toggleClass('toggle');
+      $('.open-menu').toggleClass('visibility');
+      $('.close-menu').toggleClass('visibility');
+   });
 
-let toggleMobileButton=document.querySelectorAll('.outer-menu__nav-button')[0];
-let toggleMobileMenu=document.querySelectorAll('.outer-menu')[0];
+   $('.outer-menu__nav-button').on('click', function (e) {
+      $('.outer-menu').toggleClass('toggle');
+      $('.open-menu').toggleClass('visibility');
+      $('.close-menu').toggleClass('visibility');
+   })
 
-
-function toggleMediumMenu() {
-   toggleMenu.classList.toggle('toggle');
-}
-
-toggleButton.addEventListener('click', toggleMediumMenu)
-
-function toggleFullMenu() {
-   toggleMobileMenu.classList.toggle('toggle');
-}
-
-toggleMobileButton.addEventListener('click', toggleFullMenu)
-
+});

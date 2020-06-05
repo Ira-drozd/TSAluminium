@@ -1,0 +1,132 @@
+
+.product-section {
+
+}
+
+.product-section__tabs-menu {
+  margin-top: 40px;
+
+  .collapsible {
+
+    .collapsible-body{
+      padding: 10px;
+    }
+
+    a {
+      color: $main-lightblue;
+      font-size: 1.2rem;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: none;
+
+      }
+    }
+  }
+
+  .tabs {
+    height: auto;
+   // min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    li {
+      width: 100%;
+      text-align: left;
+      min-height: 50px;
+
+      &.indicator {
+        display: none;
+      }
+    }
+  }
+
+  .tabs .tab a:hover, .tabs .tab a.active {
+    background-color: rgba(3, 155, 229, 0.1);
+    border-radius: 3px;
+    text-decoration: none;
+    // color: $main-lightblue;
+  }
+
+  .tabs .tab a {
+    color: $main-lightblue;
+    text-transform: none;
+  }
+}
+
+.product-section__main-content {
+  margin-top: 40px;
+
+  ul {
+    margin: 15px 0;
+    padding-left: 40px;
+
+    li {
+      list-style: url("../source/icons/emojione-monotone_heavy-check-mark.svg");
+    }
+  }
+
+  .tabs .tab a:hover, .tabs .tab a.active {
+    background-color: rgba(3, 155, 229, 0.1);
+    text-decoration: none;
+    // color: $main-lightblue;
+  }
+
+  .tabs .tab a {
+    color: $main-lightblue;
+    text-transform: none;
+  }
+
+  .tabs .indicator {
+    background-color: $main-lightblue;
+  }
+
+  /* .tabs .tab a{
+     color:#000;
+   } !*Black color to the text*!
+
+   .tabs .tab a:hover {
+     background-color:#eee;
+     color:#000;
+   } !*Text color on hover*!
+
+   .tabs .tab a.active {
+     background-color:#888;
+     color:#000;
+   } !*Background and text color when a tab is active*!
+
+   .tabs .indicator {
+     background-color:#000;
+   } !*Color of underline*!*/
+
+}
+
+.container-garden-type {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  //garden type
+
+  @for $i from 1 through 76 {
+    .container-garden-type__item-#{$i} {
+      background-image: url("../source/garden-typy/#{$i}.jpg");
+      width: 110px;
+      height: 110px;
+      margin: 2px;
+    }
+  }
+}
+
+.container-sectional-drawings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+

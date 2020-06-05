@@ -52,6 +52,21 @@
     color: white;
     background: $main-lightblue;
     border-radius: 3px;
+
+    &.open-menu {
+      &.visibility{
+        // color: red;
+        display: none;
+      }
+    }
+
+    &.close-menu {
+      display: none;
+      &.visibility{
+        // color: red;
+        display: block;
+      }
+    }
   }
 
 }
