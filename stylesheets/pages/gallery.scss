@@ -1,0 +1,22 @@
+
+.gallery-section {
+  // margin-top: 40px;
+}
+
+.gallery-section__album{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .materialboxed{
+    width: 277px;
+    height: 200px;
+    &.active{
+      /*width: auto;
+      height: auto;*/
+    }
+  }
+}
+
+
+

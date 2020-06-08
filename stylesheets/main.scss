@@ -21,14 +21,20 @@
 'layout/footer',
 'layout/navigation',
 'layout/navigation-footer',
-'layout/navigation-outer';
+'layout/navigation-outer',
+'layout/tabs-menu';
 // 5. Components
 @import
 'components/button';
 // 6. Page-specific styles
 @import
 'pages/home',
-'pages/products-pages';
+'pages/products-pages',
+'pages/contacts',
+'pages/gallery',
+'pages/catalogs',
+'pages/regidtration',
+'pages/news';
 // 7. Themes
 @import
 'themes/default';

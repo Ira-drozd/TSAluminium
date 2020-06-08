@@ -1,0 +1,10 @@
+.section-registration__image {
+  margin-top: 40px;
+}
+@media (max-width: 600px) {
+  .section-registration__image {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=regidtration.css.map */
