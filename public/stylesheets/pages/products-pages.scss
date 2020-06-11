@@ -1,10 +1,24 @@
 
 .product-section {
  // margin-top: 40px;
+
 }
 
 .product-section__main-content {
  // margin-top: 40px;
+
+  a{
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+  p{
+    span{
+      color: $main-lightblue;
+      font-weight: 600;
+    }
+  }
 
   ul {
     margin: 15px 0;

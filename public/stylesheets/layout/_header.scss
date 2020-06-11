@@ -109,6 +109,12 @@
 
 }
 
+.social_tel{
+  @media (max-width: $mobile-s) {
+    display: none;
+  }
+}
+
 .logo {
 
   @media (max-width: $medium) {

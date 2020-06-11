@@ -41,12 +41,16 @@
   // display: flex;
   justify-content: center;
   align-items: center;
+  //box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
 
   @media (max-width: $mobile-s) {
     display: flex;
   }
 
   svg {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
     width: 54px;
     height: 42px;
     color: white;

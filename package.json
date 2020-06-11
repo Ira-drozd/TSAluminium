@@ -4,12 +4,15 @@
   "description": "This is a sample project using the [7-1 architecture pattern](http://sass-guidelin.es/#architecture) and sticking to [Sass Guidelines](http://sass-guidelin.es) writing conventions.",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
     "jquery": "^3.5.1",
     "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    np"dev": "nodemon index"
   },
   "repository": {
     "type": "git",
