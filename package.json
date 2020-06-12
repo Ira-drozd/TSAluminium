@@ -12,7 +12,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index",
-    np"dev": "nodemon index"
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
