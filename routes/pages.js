@@ -39,16 +39,6 @@ router.get('/registration', function (req, res) {
     })
 })
 
-
-/*exphbs.registerHelper("createStringList", function(array){
-
-    var result="";
-    for(var i=0; i<array.length; i++){
-        result +="<li>" + array[i] + "</li>";
-    }
-    return new hbs.SafeString("<ul>" + result + "</ul>");
-});*/
-
 router.get('/news', function (req, res) {
     res.render('news', {
         title: 'News',

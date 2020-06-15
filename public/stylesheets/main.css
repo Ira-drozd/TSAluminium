@@ -9608,6 +9608,9 @@ body {
   align-items: center;
 }
 
+.contacts-section .social {
+  position: static;
+}
 .contacts-section a {
   font-weight: 600;
   color: #2C455C;
