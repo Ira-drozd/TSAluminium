@@ -159,27 +159,27 @@
                     <span>Оставьте вашу заявку, и мы свяжемся с вами.</span>
 
                     <div class="row">
-                        <form action="/contacts" method="post" name="sendEmail" id="#sendEmail" class="col s12">
+                        <form action="/contacts" method="post" name="sendEmail" id="send-form-email" class="col s12">
                             <div class="row">
                                 <div class="input-field col m6 s12">
-                                    <input id="tel" type="tel" class="validate" name="tel" required>
+                                    <input type="tel" class="validate" name="tel" id="send-tel" required>
                                     <label for="tel">Телефон</label>
                                 </div>
                                 <div class="input-field col m6 s12">
-                                    <input id="email" type="email" class="validate" name="email" required>
+                                    <input type="email" class="validate" name="email" id="send-email" required>
                                     <label for="email">Email</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="textarea1" class="materialize-textarea" name="message" required></textarea>
+                                    <textarea  class="materialize-textarea" name="message" id="sens-message" required></textarea>
                                     <label for="email">Ваше сообшение</label>
                                 </div>
                             </div>
 
                             <div class="flex-button">
-                                <button type="submit" id="#button-endEmail" class="btn #039be5 light-blue darken-1">Отправить</button>
+                                <button type="submit" id="send-button-email" class="btn #039be5 light-blue darken-1">Отправить</button>
                             </div>
                         </form>
                     </div>
