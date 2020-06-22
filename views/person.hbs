@@ -1,0 +1,14 @@
+<secton id="person-section">
+    <div class="container">
+        {{#if user.id}}
+            <p>Добро пожаловать, {{user.login}} {{user.name}}</p>
+            <a href="/api/logout">Выход</a>
+            <p>
+                Данные, которые доступны после входа и/или успешной регистрации!
+            </p>
+        {{else}}
+            <p>Пройдите регистрацию!</p>
+        {{/if}}
+
+    </div>
+</secton>

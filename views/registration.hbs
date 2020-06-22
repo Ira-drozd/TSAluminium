@@ -12,7 +12,21 @@
                 <h2 class="main-header">Приветствуем в TS Aluminium!</h2>
                 <p>
                     Чтобы использовать материалы из ЗОНЫ КЛИЕНТА, пожалуйста, войдите в систему или зарегистрируйтесь.
+
                 </p>
+                <!--{{#if user.id}}
+                    <p>login {{user.login}}</p>
+                    <a href="/api/logout">Выход</a>
+                    <p>
+                        Данные, которые доступны после входа и/или успешной регистрации!
+                    </p>
+                {{else}}
+                    <p>Пройдите регистрацию!</p>
+                    <p>login {{user.login}}</p>
+                {{/if}}-->
+
+
+                <p><b>Просто в любом случае</b></p>
 
 
                 <div class="col offset-m3 m6 s12">
@@ -23,7 +37,7 @@
 
                     <div id="test1" class="col s12">
                         <div class="row">
-                            <form name="sing-in" class="col s12">
+                            <form action="/api/authentication" method="post" name="sing-in-form" id="sing-in-form" class="col s12">
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="email-sing-in" type="email" class="validate" name="email-sing-in">
@@ -36,14 +50,14 @@
                                 </div>
 
                                 <div class="flex-button">
-                                    <button type="submit" class="btn #039be5 light-blue darken-1">Войти</button>
+                                    <button id="sing-in-button" type="submit" class="btn #039be5 light-blue darken-1">Войти</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div id="test2" class="col s12">
                         <div class="row">
-                            <form name="sing-up" class="col s12">
+                            <form action="/api/registration" method="post" name="sing-up-form" id="sing-up-form" class="col s12">
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="email-sing-up" type="email" class="validate" name="email-sing-up">
@@ -57,10 +71,14 @@
                                         <input id="password-sing-up" type="password" class="validate" name="password-sing-up">
                                         <label for="password-sing-up">Пароль</label>
                                     </div>
+                                    <div class="input-field col s12">
+                                        <input id="password-confirm-sing-up" type="password" class="validate" name="password-confirm-sing-up">
+                                        <label for="password-confirm-sing-up">Повторите пароль</label>
+                                    </div>
                                 </div>
 
                                 <div class="flex-button">
-                                    <button type="submit" class="btn #039be5 light-blue darken-1">Зарегистрироваться</button>
+                                    <button id="sing-up-button" type="submit" class="btn #039be5 light-blue darken-1">Зарегистрироваться</button>
                                 </div>
                             </form>
                         </div>
@@ -73,3 +91,7 @@
         </div>
     </div>
 </div>
+
+<script src="js/jquery/dist/jquery.min.js"></script>
+
+<script src="js/auth.js"></script>

@@ -1,5 +1,6 @@
-const { Router } = require('express')
+const {Router} = require('express')
 const router = Router()
+//const auth = require('../auth/auth');//!
 
 //const exphbs = require('express-handlebars')
 
@@ -32,12 +33,60 @@ router.get('/gallery', function (req, res) {
     })
 })
 
+
+// GET for logout
+router.get('/api/logout', (req, res) => {
+    if (req.session) {
+        // delete session object
+        req.session.destroy(() => {
+            res.redirect('/registration');
+        });
+    } else {
+        res.redirect('/');
+    }
+});
+
+// router.get('/person', function (req, res) {
+//     let login=req.session.userLogin;
+//     let id=req.session.userId;
+//     res.render('person', {
+//         title: 'Person',
+//         isRegistration: true,
+//         user:{
+//             login,
+//             id
+//         }
+//     })
+// })
+
+
 router.get('/registration', function (req, res) {
-    res.render('registration', {
-        title: 'Registration',
-        isRegistration: true
-    })
+
+    let login = req.session.userLogin;
+    let id = req.session.userId;
+    let name = req.session.userName;
+
+    if (req.session && req.session.userLogin && req.session.userId) {
+        console.log(req.session)
+        res.render('person', {
+            title: 'person',
+            isRegistration: true,
+            user: {
+                login,
+                id,
+                name
+            }
+        })
+    } else {
+        console.log(req.session)
+        res.render('registration', {
+            title: 'Registration',
+            isRegistration: true
+        })
+    }
+
 })
+
 
 router.get('/news', function (req, res) {
     res.render('news', {

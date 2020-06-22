@@ -4,10 +4,15 @@
   "description": "This is a sample project using the [7-1 architecture pattern](http://sass-guidelin.es/#architecture) and sticking to [Sass Guidelines](http://sass-guidelin.es) writing conventions.",
   "main": "index.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
     "jquery": "^3.5.1",
     "materialize-css": "^1.0.0-rc.2",
+    "mongoose": "^5.9.19",
     "nodemailer": "^6.4.8"
   },
   "devDependencies": {},
