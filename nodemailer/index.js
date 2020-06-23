@@ -38,11 +38,23 @@ app.post("/contacts", urlencodedParser, function (request, response) {
             `}
 
     if (!tel || !email || !message) {
+        const fields = [];
+        if (!tel) fields.push('#send-tel');
+        if (!email) fields.push('#send-email');
+        if (!message) fields.push('#sens-message');
+
         response.json({
             status: 2,
-            message: "Еmpty fields"
+            message: "Все поля должны быть заполнены",
+            fields
         })
-    } else {
+    } else if (!/.+@.+\..+/i.test(email)) {
+        response.json({
+            status: 2,
+            message: "Некорректный email",
+            fields: ['#send-email']
+        })
+    }else {
         mailer(sendMessage);
         response.json({
             status: 1,

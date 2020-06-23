@@ -20,10 +20,42 @@ app.post("/api/registration", urlencodedParser, function (request, response) {
     const password = request.body.password;
     const passwordConfirm = request.body.passwordConfirm;
 
-    if (!login) {
+    if (!login || !name || !password || !passwordConfirm) {
+        const fields = [];
+        if (!login) fields.push('#email-sing-up');
+        if (!name) fields.push('#name-sing-up');
+        if (!password) fields.push('#password-sing-up');
+        if (!passwordConfirm) fields.push('#password-confirm-sing-up');
+
         response.json({
             status: 2,
-            message: "Еmpty fields"
+            message: "Все поля должны быть заполнены",
+            fields
+        })
+    } else if (!/.+@.+\..+/i.test(login)) {
+        response.json({
+            status: 2,
+            message: "Некорректный email",
+            fields: ['#email-sing-up']
+        })
+    } else if (!/^[a-zA-Z0-9]+$/.test(password)) {
+        response.json({
+            status: 2,
+            message: "Только латинские буквы и цифры",
+            fields: ['#password-sing-up','#password-confirm-sing-up']
+        })
+    } else if (password.length < 5 || password.length > 16) {
+        response.json({
+            status: 2,
+            message: "От 5 до 16 символов",
+            fields: ['#password-sing-up','#password-confirm-sing-up']
+        })
+
+    } else if (password !== passwordConfirm) {
+        response.json({
+            status: 2,
+            message: "Пароли не совпадают",
+            fields: ['#password-sing-up','#password-confirm-sing-up']
         })
     } else {
 
@@ -58,6 +90,7 @@ app.post("/api/registration", urlencodedParser, function (request, response) {
 
 });
 
+// POST is authenticated
 app.post("/api/authentication", urlencodedParser, function (request, response) {
     if (!request.body) return response.sendStatus(400);
     console.log(request.body)
@@ -68,7 +101,8 @@ app.post("/api/authentication", urlencodedParser, function (request, response) {
     if (!login) {
         response.json({
             status: 2,
-            message: "Auth false"
+            message: "Заполните все поля",
+            fields: ['#email-sing-in','#password-sing-in']
         })
     } else {
 
@@ -79,15 +113,16 @@ app.post("/api/authentication", urlencodedParser, function (request, response) {
                 if (!user) {
                     response.json({
                         status: 2,
-                        message: "Auth false user"
+                        message: "Неверный логин или пароль",
+                        fields: ['#email-sing-in','#password-sing-in']
                     });
-                }
-                else {
-                    bcrypt.compare(password, user.password, function(err, result) {
+                } else {
+                    bcrypt.compare(password, user.password, function (err, result) {
                         if (!result) {
                             response.json({
                                 status: 2,
-                                message: "Auth false pass"
+                                message: "Неверный логин или пароль",
+                                fields: ['#email-sing-in','#password-sing-in']
                             });
                         } else {
                             request.session.userId = user.id;//

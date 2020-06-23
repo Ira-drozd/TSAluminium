@@ -14,20 +14,6 @@
                     Чтобы использовать материалы из ЗОНЫ КЛИЕНТА, пожалуйста, войдите в систему или зарегистрируйтесь.
 
                 </p>
-                <!--{{#if user.id}}
-                    <p>login {{user.login}}</p>
-                    <a href="/api/logout">Выход</a>
-                    <p>
-                        Данные, которые доступны после входа и/или успешной регистрации!
-                    </p>
-                {{else}}
-                    <p>Пройдите регистрацию!</p>
-                    <p>login {{user.login}}</p>
-                {{/if}}-->
-
-
-                <p><b>Просто в любом случае</b></p>
-
 
                 <div class="col offset-m3 m6 s12">
                     <ul class="tabs">
@@ -40,11 +26,11 @@
                             <form action="/api/authentication" method="post" name="sing-in-form" id="sing-in-form" class="col s12">
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="email-sing-in" type="email" class="validate" name="email-sing-in">
+                                        <input id="email-sing-in" type="email" class="validate" name="email-sing-in" required>
                                         <label for="email-sing-in">Email</label>
                                     </div>
                                     <div class="input-field col s12">
-                                        <input id="password-sing-in" type="password" class="validate" name="password-sing-in">
+                                        <input id="password-sing-in" type="password" class="validate" name="password-sing-in" required>
                                         <label for="password-sing-in">Пароль</label>
                                     </div>
                                 </div>
@@ -60,15 +46,15 @@
                             <form action="/api/registration" method="post" name="sing-up-form" id="sing-up-form" class="col s12">
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="email-sing-up" type="email" class="validate" name="email-sing-up">
+                                        <input id="email-sing-up" type="email" class="validate" name="email-sing-up" required>
                                         <label for="email-sing-up">Email</label>
                                     </div>
                                     <div class="input-field col s12">
-                                        <input id="name-sing-up" type="text" class="validate" name="name-sing-up">
+                                        <input id="name-sing-up" type="text" class="validate" name="name-sing-up" required>
                                         <label for="name-sing-up">Имя</label>
                                     </div>
                                     <div class="input-field col s12">
-                                        <input id="password-sing-up" type="password" class="validate" name="password-sing-up">
+                                        <input id="password-sing-up" type="password" class="validate" name="password-sing-up" required>
                                         <label for="password-sing-up">Пароль</label>
                                     </div>
                                     <div class="input-field col s12">
@@ -91,7 +77,3 @@
         </div>
     </div>
 </div>
-
-<script src="js/jquery/dist/jquery.min.js"></script>
-
-<script src="js/auth.js"></script>

@@ -46,20 +46,6 @@ router.get('/api/logout', (req, res) => {
     }
 });
 
-// router.get('/person', function (req, res) {
-//     let login=req.session.userLogin;
-//     let id=req.session.userId;
-//     res.render('person', {
-//         title: 'Person',
-//         isRegistration: true,
-//         user:{
-//             login,
-//             id
-//         }
-//     })
-// })
-
-
 router.get('/registration', function (req, res) {
 
     let login = req.session.userLogin;

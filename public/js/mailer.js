@@ -3,9 +3,9 @@ $(function () {
     $('.modal').modal();
 
     $('#send-button-email').on('click', function (e) {
-
-
         e.preventDefault();
+        $('.red-text').remove();
+
         let data = {
             tel: $('#send-tel').val(),
             email: $('#send-email').val(),
@@ -24,7 +24,10 @@ $(function () {
                 $('#send-form-email')[0].reset();
             }
             if (data.status === 2) {
-                M.toast({html: toastHTML});
+                data.fields.forEach(function (item) {
+                    $(item).addClass('invalid');
+                    $(item).after(`<div class="red-text">${data.message}</div>`);
+                })
                  }
         }).fail(function (data) {
             console.log("Error load");
